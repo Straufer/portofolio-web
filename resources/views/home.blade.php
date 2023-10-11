@@ -14,7 +14,8 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="background-color: #3e0782;">
   <!-- <a class="navbar-brand" href="#">Navbar </a> -->
-  <i class="fa-brands fa-github fa-2xl"></i>
+  <!-- <i class="fa-brands fa-github fa-2xl"></i> -->
+  <i class="fa-brands fa-github fa-2xl" style="color: #ff0000;"></i>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -150,6 +151,7 @@
   </section>
   <!-- contact me -->
 
+  <!-- footer -->
   <footer style="background-color: #3e0782;">
     <div class="container" style="padding-top: 1rem;">
       <div class="row">
@@ -172,8 +174,17 @@
       </div>
     </div>
   </footer>
+  <!-- footer -->
 
-  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+  <!-- copyright -->
+  <div class="text-center text-white p-3" style="background-color:black;">
+  <i class="fa-regular fa-copyright fa-s"></i> 2023 Copyright
+  <a href="#" class="text-white">Paung</a>
+  </div>
+  <!-- copyright -->
+
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 </body>
 <!-- bootstrap 4.6 config -->
