@@ -24,13 +24,13 @@
         <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#project">Project</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#about">about</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Disabled</a>
+        <a class="nav-link" href="#contact">Contact Me</a>
       </li>
     </ul>
   </div>
@@ -150,7 +150,24 @@
   </section>
   <!-- contact me -->
 
+  <footer style="background-color: #3e0782;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <button type="button" class="btn btn-primary btn-floating mx-2" style="background-color: #342259;">
+            <i class="fa-brands fa-discord"></i>
+          </button>
+          <button type="button" class="btn btn-primary btn-floating mx-2" style="background-color: #342259;">
+            <i class="fa-brands fa-twitter"></i>
+          </button>
+          <button type="button" class="btn btn-primary btn-floating mx-2" style="background-color: #342259;">
+            <i class="fa-brands fa-youtube"></i>
+          </button>
+      </div>
+    </div>
+  </footer>
 
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 </body>
 <!-- bootstrap 4.6 config -->
