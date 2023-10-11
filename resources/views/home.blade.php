@@ -66,8 +66,8 @@
 
  <!-- Project -->
  <section id="project">
-    <div class="container">
-      <div class="row justify-content-center">
+   <div class="container" >
+   <div class="row justify-content-center">
         <h2>My project</h2> <br> <br> <br> <br>
       </div>
       <div class="row justify-content-center">
@@ -151,23 +151,29 @@
   <!-- contact me -->
 
   <footer style="background-color: #3e0782;">
-    <div class="container">
+    <div class="container" style="padding-top: 1rem;">
       <div class="row">
         <div class="col-md-8">
-          <button type="button" class="btn btn-primary btn-floating mx-2" style="background-color: #342259;">
+          <button type="button" class="btn btn-primary btn-floating mx-2 border-0" style="background-color: #7289da;">
             <i class="fa-brands fa-discord"></i>
           </button>
-          <button type="button" class="btn btn-primary btn-floating mx-2" style="background-color: #342259;">
+          <button type="button" class="btn btn-primary btn-floating mx-2 border-0">
             <i class="fa-brands fa-twitter"></i>
           </button>
-          <button type="button" class="btn btn-primary btn-floating mx-2" style="background-color: #342259;">
+          <button type="button" class="btn btn-danger btn-floating mx-2 border-0">
             <i class="fa-brands fa-youtube"></i>
           </button>
+      </div>
+      <div class="col-md-4 text-white">
+        <h6 class="text-uppercase fw-bold">
+          <i class="fa-regular fa-copyright fa-2xl"></i> RARS
+        </h6>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa praesentium nostrum maiores veritatis? Omnis libero totam asperiores mollitia quas delectus.</p>
       </div>
     </div>
   </footer>
 
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
 
 </body>
 <!-- bootstrap 4.6 config -->
@@ -175,4 +181,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
+
+<script>
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.documentElement.scrollTop = 0; 
+} 
+</script>
+
 </html>
