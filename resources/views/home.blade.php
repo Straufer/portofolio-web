@@ -12,8 +12,6 @@
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="background-color: #3e0782;">
-  <!-- <a class="navbar-brand" href="#">Navbar </a> -->
-  <!-- <i class="fa-brands fa-github fa-2xl"></i> -->
   <i class="fa-brands fa-github fa-2xl" style="color: #ff0000;"></i>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
