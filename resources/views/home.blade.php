@@ -1,12 +1,23 @@
+<?php
+
+  $jumbotron = get_section_data('JUMBOTRON');
+  $about = get_section_data('ABOUT');
+
+  $site_name = get_setting_value('_site_name'); 
+  $site_description = get_setting_value('_site_description');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>{{ $site_name }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -29,16 +40,20 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#contact">Contact Me</a>
-      </li>
+      </li>￼
+Paung
+dengan spring boot menjadikan negeri anda tentram
     </ul>
   </div>
-</nav>
+</nav>￼
+Paung
+dengan spring boot menjadikan negeri anda tentram
 <!-- navbar -->
 
 <!-- jumbotron -->
 <div class="jumbotron text-center rounded-0" id="home" style="height: 700px; background-color:#342259; color:white;">
-  <img src="http://localhost:8000/images/1.png" class="img-thumbnail rounded-circle" width="120">
-  <h1 class="display-2">Joko Bogor</h1>
+  <img src="{{ Storage::url($jumbotron->thumbnail) }}" class="img-thumbnail rounded-circle" width="120">
+  <h1 class="display-2">{!! strip_tags ($jumbotron->title) !!}</h1>
   <p class="lead">dengan spring boot menjadikan negeri anda tentram</p>
   <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5000ca" fill-opacity="1" d="M0,64L48,96C96,128,192,192,288,192C384,192,480,128,576,133.3C672,139,768,213,864,229.3C960,245,1056,203,1152,186.7C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
 </div> 
@@ -68,9 +83,9 @@
    <div class="row justify-content-center">
         <h2>My project</h2> <br> <br> <br> <br>
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1200" >
 
-        <div class="col-md-4 pb-3">
+        <div class="col-md-4 pb-3" >
           <div class="card" style="width: 18rem;">
             <img src="https://i.pinimg.com/564x/9e/a5/e5/9ea5e5255688e5a7a3a9c6226d36139c.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -165,9 +180,9 @@
       </div>
       <div class="col-md-4 text-white">
         <h6 class="text-uppercase fw-bold">
-          <i class="fa-regular fa-copyright fa-2xl"></i> RARS
+          <i class="fa-regular fa-copyright fa-2xl"></i> {{ $site_name }}
         </h6>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa praesentium nostrum maiores veritatis? Omnis libero totam asperiores mollitia quas delectus.</p>
+        <p>{!! strip_tags($site_description) !!}</p>
       </div>
     </div>
   </footer>
@@ -187,8 +202,10 @@
 <!-- bootstrap 4.6 config -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
+  AOS.init();
 let mybutton = document.getElementById("myBtn");
 
 window.onscroll = function() {scrollFunction()};
