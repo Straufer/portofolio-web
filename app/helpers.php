@@ -15,7 +15,14 @@ function get_section_data($key){
     return $data = isset($data) ? $data : 'cannot access section because key is valid';
 }
 
-function get_project(){
+function get_project_byId($byId){
+    $data = Project::where('id', $byId)->first();
+    if(isset($data)){
+        return $data;
+    }
+}
+
+function get_all_project(){
     $data = Project::all();
     return $data;
 }
