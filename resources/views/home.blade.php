@@ -5,6 +5,9 @@
 
   $site_name = get_setting_value('_site_name'); 
   $site_description = get_setting_value('_site_description');
+  $location = get_setting_value('_location');
+
+  $about = get_section_data('ABOUT');
 
 ?>
 
@@ -40,14 +43,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#contact">Contact Me</a>
-      </li>￼
-Paung
-dengan spring boot menjadikan negeri anda tentram
+      </li>
     </ul>
   </div>
-</nav>￼
-Paung
-dengan spring boot menjadikan negeri anda tentram
+</nav>
 <!-- navbar -->
 
 <!-- jumbotron -->
@@ -65,12 +64,16 @@ dengan spring boot menjadikan negeri anda tentram
       <div class="row border-danger mb-3 justify-content-center">
         <h2>About Me</h2>
       </div>
-      <div class="row border-info">
-        <div class="col-md-5">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ducimus dolore, itaque deleniti labore provident minima corporis quis repellat fuga tempore id pariatur ipsum odit! Quia assumenda quibusdam dolore sunt voluptate consequatur? Tempora voluptatem quas error, consequatur ut velit adipisci temporibus. Molestias nihil perspiciatis soluta, veniam delectus tenetur sit velit.</p>
-        </div>
-        <div class="col-md-5">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ducimus dolore, itaque deleniti labore provident minima corporis quis repellat fuga tempore id pariatur ipsum odit! Quia assumenda quibusdam dolore sunt voluptate consequatur? Tempora voluptatem quas error, consequatur ut velit adipisci temporibus. Molestias nihil perspiciatis soluta, veniam delectus tenetur sit velit.</p>
+      <div class="card mb-3" style="max-width: 1000px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ Storage::url($about->thumbnail) }}" alt="about-image" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">{!! strip_tags($about->content) !!}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div> 
@@ -177,6 +180,9 @@ dengan spring boot menjadikan negeri anda tentram
           <button type="button" class="btn btn-danger btn-floating mx-2 border-0">
             <i class="fa-brands fa-youtube"></i>
           </button>
+          <div class="col-md-4 text-white pt-2">
+            <p>{{ $location }}</p>
+          </div>
       </div>
       <div class="col-md-4 text-white">
         <h6 class="text-uppercase fw-bold">
