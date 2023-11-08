@@ -9,6 +9,10 @@
 
   $about = get_section_data('ABOUT');
 
+  $project = get_all_project();
+
+  $github = get_setting_value("_github");
+
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +54,8 @@
 <!-- navbar -->
 
 <!-- jumbotron -->
-<div class="jumbotron text-center rounded-0" id="home" style="height: 700px; background-color:#342259; color:white;">
-  <img src="{{ Storage::url($jumbotron->thumbnail) }}" class="img-thumbnail rounded-circle" width="120">
+<div class="jumbotron text-center rounded-0" id="home" style="height: 765px; background-color:#342259; color:white;">
+  <img src="{{ Storage::url($jumbotron->thumbnail) }}" class="img-thumbnail rounded-circle" style="margin-top: 80px;" width="200">
   <h1 class="display-2">{!! strip_tags ($jumbotron->title) !!}</h1>
   <p class="lead">dengan spring boot menjadikan negeri anda tentram</p>
   <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5000ca" fill-opacity="1" d="M0,64L48,96C96,128,192,192,288,192C384,192,480,128,576,133.3C672,139,768,213,864,229.3C960,245,1056,203,1152,186.7C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> -->
@@ -87,58 +91,18 @@
         <h2>My project</h2> <br> <br> <br> <br>
       </div>
       <div class="row justify-content-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1200" >
-
+      @foreach($project as $item)
         <div class="col-md-4 pb-3" >
           <div class="card" style="width: 18rem;">
-            <img src="https://i.pinimg.com/564x/9e/a5/e5/9ea5e5255688e5a7a3a9c6226d36139c.jpg" class="card-img-top" alt="...">
+            <img src="{{ Storage::url($item->thumbnail) }}" class="card-img-top" alt="image-project" height="200" width="200">
             <div class="card-body">
-              <h5 class="card-title">Project PJBL</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="https://id.pinterest.com/pin/4222193391128128/" class="btn btn-primary">link uy"</a>
+              <h5 class="card-title">{{ $item->title }}</h5>
+              <p class="card-text">{!! strip_tags($item->content) !!}</p>
+              <a href="{{ $item->link }}" class="btn btn-primary" target="_blank">Link</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 pb-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://i.pinimg.com/564x/3a/8a/6c/3a8a6cc532e966db07c76f0041fe7a7b.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Mobile Apps</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="https://id.pinterest.com/pin/4222193391128128/" class="btn btn-primary">link uy"</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 pb-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://i.pinimg.com/564x/6b/03/76/6b0376ac3b6232fc032ba81d2e4e7b11.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">C++ (CPP)</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="https://id.pinterest.com/pin/4222193391128128/" class="btn btn-primary">link uy"</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 pb-4 mb-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://i.pinimg.com/564x/6f/f1/42/6ff1420eff13056ec51bca5c8a7dd2bf.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Blender 3D Design</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="https://id.pinterest.com/pin/4222193391128128/" class="btn btn-primary">link uy"</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 pb-4 mb-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://i.pinimg.com/736x/f3/1d/f1/f31df17603effe63f02083d4381649df.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Project Rubish Rescue</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="https://id.pinterest.com/pin/4222193391128128/" class="btn btn-primary">link uy"</a>
-            </div>
-          </div>
-        </div>
-
+        @endforeach
       </div>
     </div>
   </section>
@@ -171,9 +135,9 @@
     <div class="container" style="padding-top: 1rem;">
       <div class="row">
         <div class="col-md-8">
-          <button type="button" class="btn btn-primary btn-floating mx-2 border-0" style="background-color: #7289da;">
-            <i class="fa-brands fa-discord"></i>
-          </button>
+          <a href="{{ $github }}" target="_blank" class="btn btn-primary btn-floating mx-2 border-0" style="background-color: #7289da;">
+            <i class="fa-brands fa-github" ></i>
+          </a>
           <button type="button" class="btn btn-primary btn-floating mx-2 border-0">
             <i class="fa-brands fa-twitter"></i>
           </button>
@@ -196,7 +160,7 @@
 
   <!-- copyright -->
   <div class="text-center text-white p-3" style="background-color:black;">
-  <i class="fa-regular fa-copyright fa-s"></i> 2023 Copyright
+  <i class="fa-regular fa-copyright fa-s"></i> <?php echo (int)date('Y') ?> Copyright
   <a href="#" class="text-white">Paung</a>
   </div>
   <!-- copyright -->
