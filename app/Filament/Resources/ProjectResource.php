@@ -50,6 +50,8 @@ class ProjectResource extends Resource
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('thumbnail')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('content')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('link')
                     ->searchable()
                     ->sortable(),
